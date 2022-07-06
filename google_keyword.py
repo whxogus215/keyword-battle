@@ -5,7 +5,7 @@ import requests
 
 
 def get_keyword_number(keyword):
-    url = "https://www.google.co.kr/search?q={}".format(keyword)
+    url = "https://www.google.co.kr/search?q={}&hl=en".format(keyword)
     headers = {
         'user-agent' : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
     }
@@ -20,7 +20,7 @@ def get_keyword_number(keyword):
     number = soup.select_one('#result-stats').text
 
     # 정리
-    number = int(number[number.find('약')+2:number.rfind('개')].replace(',',''))
+    number = int(number[number.find('About')+6:number.rfind('results')-1].replace(',',''))
 
     return number
 
