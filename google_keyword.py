@@ -5,7 +5,7 @@ import requests
 
 
 def get_keyword_number(keyword):
-    url = "https://www.google.com/search?q={}".format(keyword)
+    url = "https://www.google.co.kr/search?q={}".format(keyword)
     headers = {
         'user-agent' : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
     }
